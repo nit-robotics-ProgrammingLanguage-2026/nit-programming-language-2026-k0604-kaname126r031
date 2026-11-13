@@ -1,2 +1,33 @@
 #include <stdio.h>
-int main(void){int a;long s=0;scanf("%d",&a);if(a<0){printf("NG");return 0;}for(int i=1;;i++){if(i>a)break;if(i%3==0||i%5==0)continue;s+=i;}printf("%ld",s);return 0;}
+
+int main(void)
+{
+    int inputNumber;
+    long long total = 0;
+    long long currentNumber;
+
+    scanf("%d", &inputNumber);
+
+    if (inputNumber < 0) {
+        printf("NG");
+        return 0;
+    }
+
+    for (currentNumber = 1; ; currentNumber++) {
+
+        if (currentNumber > inputNumber) {
+            break;
+        }
+
+        if (currentNumber % 3 == 0 ||
+            currentNumber % 5 == 0) {
+            continue;
+        }
+
+        total += currentNumber;
+    }
+
+    printf("%lld", total);
+
+    return 0;
+}
